@@ -231,7 +231,7 @@ keys = [
 groups = []
 
 group_names = 'www term file share mus'.split()
-group_labels = ["一", "二", "三", "四", "五"]
+group_labels = ["󰋙", "󰋙", "󰋙", "󰋙", "󰋙"]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
@@ -357,13 +357,13 @@ screens = [
                     length=20,
                     ),
                 widget.GroupBox(
-                    active=colors[3],
+                    active=colors[4],
                     block_highlight_text_color=colors[7],
                     borderwidth=0,
                     disable_drag=True,
-                    font='Stick',
+                    font='Material Design Icons',
                     fontsize=18,
-                    inactive=colors[1],
+                    inactive=colors[5],
                     rounded=True,
                 ),
                 widget.Spacer(
@@ -392,19 +392,19 @@ screens = [
                     fontsize=12,
                     padding=0,
                     ),
-                widget.Spacer(
-                    length=16,
-                    ),
-                widget.Image(
-                        filename='~/.config/qtile/assets/bar/bat.png',
-                        margin=7,
-                        ),
-                widget.Battery(
-                        format=' {percent:2.0%}',
-                        foreground = colors[5],
-                        fontsize=12,
-                        padding=0,
-                        ),
+                # widget.Spacer(
+                #     length=16,
+                #     ),
+                # widget.Image(
+                #         filename='~/.config/qtile/assets/bar/bat.png',
+                #         margin=7,
+                #         ),
+                # widget.Battery(
+                #         format=' {percent:2.0%}',
+                #         foreground = colors[5],
+                #         fontsize=12,
+                #         padding=0,
+                #         ),
                 widget.Spacer(
                         length=30,
                         ),
@@ -425,7 +425,7 @@ screens = [
                         length=20,
                         ),
                 widget.Clock(
-                        format='%I:%M %p',
+                        format='%H:%M',
                         ),
                 widget.Spacer(
                         length=10,
