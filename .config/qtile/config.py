@@ -192,7 +192,7 @@ keys = [
 
         # Screenshots
         Key(
-                [], "Print", lazy.spawn("scrot 'screenshot_%Y%m%d_%H%M%S.png' -e \
+                [], "Print", lazy.spawn("scrot 'Screenshot_%Y%m%d_%H%M%S.png' -e \
                         'mkdir -p ~/Pictures/Screenshots && mv $f \
                         ~/Pictures/Screenshots && xclip -selection clipboard \
                         -t image/png -i ~/Pictures/Screenshots/`ls \
@@ -200,12 +200,22 @@ keys = [
                 lazy.spawn("dunstify -i ~/.config/dunst/screenshot.png \
                         'Screenshot captured'"),
                 desc="Take screenshot"
-                )
+                ),
+        Key(
+                ["shift"], "Print", lazy.spawn("scrot -s 'Screenshot_%Y%m%d_%H%M%S.png' -e \
+                        'mkdir -p ~/Pictures/Screenshots && mv $f \
+                        ~/Pictures/Screenshots && xclip -selection clipboard \
+                        -t image/png -i ~/Pictures/Screenshots/`ls \
+                        -1 -t ~/Pictures/Screenshots | head -1`'"),
+                lazy.spawn("dunstify -i ~/.config/dunst/screenshot.png \
+                        'Select the area to capture'"),
+                desc="Take screenshot of area"
+                ),
         ]
 
 groups = []
 group_names = 'www term file share mus'.split()
-group_labels = ["󱓼", "󱓼", "󱓼", "󱓼", "󱓼"]
+group_labels = ["󰌠", "󰌠", "󰌠", "󰌠", "󰌠"]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
@@ -348,7 +358,8 @@ screens = [
                         display_metadata=['xesam:title', 'xesam:artist'],
                         max_chars=50,
                         width=150,
-                        fontsize=12,
+                        font='scientifica',
+                        fontsize=18,
                         foreground=colors[5]
                         ),
                     widget.Spacer(
@@ -394,7 +405,8 @@ screens = [
                             location={'Asuncion': 'Asuncion'},
                             padding=4,
                             format=1,
-                            fontsize=12
+                            fontsize=12,
+                            update_interval=1800,
                             ),
                     widget.Spacer(
                             length=30
@@ -404,8 +416,8 @@ screens = [
                             background=colors[1]
                             ),
                     widget.Systray(
-                            icon_size=24,
-                            padding=0,
+                            icon_size=16,
+                            padding=5,
                             background=colors[1]
                             ),
                     widget.Spacer(
