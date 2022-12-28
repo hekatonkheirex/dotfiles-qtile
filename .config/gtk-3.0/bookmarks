@@ -1,8 +1,11 @@
 file:///home/mura/Documents
 file:///home/mura/Downloads
-file:///home/mura/git
 file:///home/mura/Music
 file:///home/mura/Pictures
 file:///home/mura/Public
 file:///home/mura/Templates
 file:///home/mura/Videos
+smb://192.168.100.3/apps/ /apps/ on GL752VW
+smb://192.168.100.3/imgs/ /imgs/ on GL752VW
+smb://192.168.100.3/vids/ /vids/ on GL752VW
+smb://192.168.100.4/pelis/ /pelis/ on MIWA-PC

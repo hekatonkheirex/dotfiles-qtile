@@ -83,8 +83,22 @@ return require('packer').startup({
   use 'elkowar/yuck.vim'
 
   -- Themes
-    use({ 'catppuccin/nvim', as = 'catppuccin' })
-  end,
+  use 'shaunsingh/nord.nvim'
+  use 'navarasu/onedark.nvim'
+  use 'sainnhe/everforest'
+  use 'sainnhe/gruvbox-material'
+  use 'LunarVim/horizon.nvim'
+  use({ 'catppuccin/nvim', as = 'catppuccin' })
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    tag = 'v1.*',
+  })
+  use 'folke/tokyonight.nvim'
+  use 'audibleblink/hackthebox.vim'
+  use {'decaycs/decay.nvim', as = 'decay'}
+  use 'Shatur/neovim-ayu'
+end,
 config = {
   display = {
     open_fn = function()

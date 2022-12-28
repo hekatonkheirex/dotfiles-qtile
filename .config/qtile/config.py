@@ -275,7 +275,7 @@ layout_theme = {
 
 layouts = [
         layout.MonadTall(
-            border_focus='89b4fa',
+            border_focus='cba6f7',
             border_normal='1e1e2e',
             border_width=4,
             margin=15,

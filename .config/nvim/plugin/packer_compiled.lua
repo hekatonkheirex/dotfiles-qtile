@@ -114,11 +114,36 @@ _G.packer_plugins = {
     path = "/home/mura/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  decay = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/decay",
+    url = "https://github.com/decaycs/decay.nvim"
+  },
+  everforest = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\ni\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\tyadm\1\0\1\venable\2\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0" },
     loaded = true,
     path = "/home/mura/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
+  ["hackthebox.vim"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/hackthebox.vim",
+    url = "https://github.com/audibleblink/hackthebox.vim"
+  },
+  ["horizon.nvim"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/horizon.nvim",
+    url = "https://github.com/LunarVim/horizon.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -134,6 +159,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mura/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["neovim-ayu"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/neovim-ayu",
+    url = "https://github.com/Shatur/neovim-ayu"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -192,6 +227,11 @@ _G.packer_plugins = {
     path = "/home/mura/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/mura/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -202,10 +242,20 @@ _G.packer_plugins = {
     path = "/home/mura/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/mura/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/mura/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["twilight.nvim"] = {
     config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0" },
@@ -232,6 +282,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\ni\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\tyadm\1\0\1\venable\2\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: twilight.nvim
 time([[Config for twilight.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
@@ -240,14 +298,6 @@ time([[Config for twilight.nvim]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n�\1\0\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\6\0005\4\3\0005\5\4\0=\5\5\4=\4\a\3=\3\t\0025\3\n\0004\4\0\0=\4\v\3=\3\f\2B\0\2\1K\0\1\0\24update_focused_file\16ignore_list\1\0\2\15update_cwd\2\venable\2\rrenderer\1\0\0\19indent_markers\1\0\0\nicons\1\0\3\vcorner\t└ \tnone\a  \tedge\t│ \1\0\1\venable\2\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\ni\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\tyadm\1\0\1\venable\2\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -3,6 +3,8 @@ export GTK_IM_MODULE='ibus'
 export QT_IM_MODULE='ibus'
 export XMODIFIERS=@im='ibus'
 
-#Toolbar for anthy
-
+# Settings for QT
 export QT_QPA_PLATFORMTHEME="qt5ct"
+
+export GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
+TDESKTOP_DISABLE_GTK_INTEGRATION=1
