@@ -267,7 +267,7 @@ for i, name in enumerate(group_names, 1):
 # layouts
 # Catppuccin
 layout_theme = {
-        "border_width": 2,
+        "border_width": 4,
         "margin": 15,
         "border_focus": "cba6f7",
         "border_normal": "1e1e2e"
@@ -391,16 +391,6 @@ screens = [
                     # widget.Spacer(
                     #         length=16,
                     #         ),
-                    # widget.Image(
-                    #         filename='~/.config/qtile/assets/bar/bat.png',
-                    #         margin=7,
-                    #         ),
-                    # widget.Battery(
-                    #         format=' {percent:2.0%}',
-                    #         foreground = colors[5],
-                    #         fontsize=12,
-                    #         padding=0,
-                    #         ),
                     widget.Wttr(
                             location={'Asuncion': 'Asuncion'},
                             padding=4,
@@ -408,8 +398,18 @@ screens = [
                             fontsize=12,
                             update_interval=1800,
                             ),
+                    widget.Image(
+                            filename='~/.config/qtile/assets/bar/bat.png',
+                            margin=5,
+                            ),
+                    widget.Battery(
+                            format=' {percent:2.0%}',
+                            foreground = colors[2],
+                            fontsize=12,
+                            padding=0,
+                            ),
                     widget.Spacer(
-                            length=30
+                            length=20
                             ),
                     widget.Spacer(
                             length=10,

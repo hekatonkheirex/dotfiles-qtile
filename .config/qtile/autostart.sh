@@ -17,7 +17,6 @@ $HOME/.config/scripts/thunar.sh &
 thunar --daemon &
 xss-lock -l $HOME/.config/scripts/lock.sh & 
 blueman-applet &
-xfce4-power-manager &
 nm-applet &
 lxsession &
 gnome-keyring-daemon --start --components=pkcs11,secrets,ssh &
