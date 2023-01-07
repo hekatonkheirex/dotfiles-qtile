@@ -215,7 +215,7 @@ keys = [
 
 groups = []
 group_names = 'www term file share mus'.split()
-group_labels = ["󰌠", "󰌠", "󰌠", "󰌠", "󰌠"]
+group_labels = ["", "", "", "", ""]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
@@ -344,10 +344,11 @@ screens = [
                         block_highlight_text_color=colors[7],
                         borderwidth=0,
                         disable_drag=True,
-                        font='Material Design Icons',
-                        fontsize=18,
+                        font='Font Awesome 6 Pro Solid, Font Awesome 6 Brands',
+                        fontsize=16,
                         inactive=colors[5],
-                        rounded=True
+                        rounded=True,
+                        spacing=10,
                         ),
                     widget.Spacer(
                         length=bar.STRETCH
@@ -365,32 +366,6 @@ screens = [
                     widget.Spacer(
                         lenght=bar.STRETCH
                         ),
-                    # widget.Image(
-                    #     filename='~/.config/qtile/assets/bar/sun.png',
-                    #     margin=8
-                    #     ),
-                    # widget.Backlight(
-                    #     foreground=colors[6],
-                    #     brightness_file='/sys/class/backlight/amdgpu_bl0/actual_brightness',
-                    #     max_brightness_file='/sys/class/backlight/amdgpu_bl0/max_brightness',
-                    #     fontsize=12,
-                    #     padding=0
-                    #     ),
-                    # widget.Spacer(
-                    #     length=16
-                    #     ),
-                    # widget.Image(
-                    #         filename='~/.config/qtile/assets/bar/vol.png',
-                    #         margin=8
-                    #         ),
-                    # widget.PulseVolume(
-                    #         foregroun=colors[8],
-                    #         fontsize=12,
-                    #         padding=0
-                    #         ),
-                    # widget.Spacer(
-                    #         length=16,
-                    #         ),
                     widget.Wttr(
                             location={'Asuncion': 'Asuncion'},
                             padding=4,
@@ -399,11 +374,43 @@ screens = [
                             update_interval=1800,
                             ),
                     widget.Image(
+                        filename='~/.config/qtile/assets/bar/sun.png',
+                        margin=8
+                        ),
+                    widget.Backlight(
+                        foreground=colors[6],
+                        brightness_file='/sys/class/backlight/amdgpu_bl0/actual_brightness',
+                        max_brightness_file='/sys/class/backlight/amdgpu_bl0/max_brightness',
+                        fontsize=12,
+                        padding=0
+                        ),
+                    widget.Spacer(
+                        length=16
+                        ),
+                    widget.Image(
+                            filename='~/.config/qtile/assets/bar/vol.png',
+                            margin=8
+                            ),
+                    widget.PulseVolume(
+                            foregroun=colors[8],
+                            fontsize=12,
+                            padding=0
+                            ),
+                    widget.Spacer(
+                            length=16,
+                            ),
+                    widget.Image(
                             filename='~/.config/qtile/assets/bar/bat.png',
                             margin=5,
                             ),
                     widget.Battery(
-                            format=' {percent:2.0%}',
+                            format='{char} {percent:2.0%}',
+                            charge_char='󱐋',
+                            discharge_char='󱈸',
+                            notify_below=15,
+                            notification_timeout=0,
+                            low_background=colors[4],
+                            low_percentage=0.15,
                             foreground = colors[2],
                             fontsize=12,
                             padding=0,
