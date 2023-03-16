@@ -68,7 +68,6 @@ gst-plugin-pipewire
 gvfs
 gvfs-mtp
 gvfs-smb
-hplip
 htop
 inetutils
 inter-font
@@ -203,7 +202,6 @@ usbutils
 vdhcoapp-bin
 viewnior
 w3m
-wev
 wezterm
 wget
 which
