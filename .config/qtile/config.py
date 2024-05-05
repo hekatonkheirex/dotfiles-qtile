@@ -9,7 +9,7 @@ from typing import List  # noqa: F401
 
 # Defaults
 mod = "mod4"
-myTerm = "wezterm"
+myTerm = "kitty"
 
 
 # Autostart programs
@@ -234,11 +234,10 @@ def assign_app_group(client):
             "firefox",
             "Firefox",
             "Navigator",
-            "google-chrome",
-            "Google-chrome"
             ]
     d[group_names[1]] = [
-            "org.wezfurlong.wezterm"
+            "org.wezfurlong.wezterm",
+            "kitty",
             ]
     d[group_names[2]] = [
             "thunar"
@@ -267,7 +266,7 @@ for i, name in enumerate(group_names, 1):
 # layouts
 # Catppuccin
 layout_theme = {
-        "border_width": 4,
+        "border_width": 2,
         "margin": 15,
         "border_focus": "cba6f7",
         "border_normal": "1e1e2e"
@@ -277,39 +276,38 @@ layouts = [
         layout.MonadTall(
             border_focus='cba6f7',
             border_normal='1e1e2e',
-            border_width=4,
+            border_width=2,
             margin=15,
             ratio=0.52
             ),
         layout.Floating(
             border_focus='f5c2e7',
             border_normal='1e1e2e',
-            border_width=4,
+            border_width=2,
             fullscreen_border_width=0
             ),
         layout.Spiral(
             border_focus='89b4fa',
             border_normal='1e1e2e',
             margin=15,
-            border_width=4
+            border_width=2
             )
         ]
 
 # Colors definitions
-# Catppuccin
 colors = [
-        ["#1e1e2e", "#1e1e2e"],  # 0 Background 0
-        ["#313244", "#313244"],  # 1 Background 1
-        ["#cdd6f4", "#cdd6f4"],  # 2 Foreground 0
-        ["#bac2de", "#bac2de"],  # 3 Foreground 1
-        ["#f38ba8", "#f38ba8"],  # 4 Red
-        ["#a6e3a1", "#a6e3a1"],  # 5 Green
-        ["#f9e2af", "#f9e2af"],  # 6 Yellow
-        ["#89b4fa", "#89b4fa"],  # 7 Blue
-        ["#f5c2e7", "#f5c2e7"],  # 8 Magenta
-        ["#89dceb", "#89dceb"],  # 9 Cyan
-        ["#fab387", "#fab387"],  # 10 Orange
-        ["#cba6f7", "#cba6f7"]  # 11 Violet
+        ["#161616", "#161616"],  # 0 Background 0
+        ["#393939", "#393939"],  # 1 Background 1
+        ["#ffffff", "#ffffff"],  # 2 Foreground 0
+        ["#dde1e6", "#dde1e6"],  # 3 Foreground 1
+        ["#ee5396", "#ee5396"],  # 4 Red
+        ["#42be65", "#42be65"],  # 5 Green
+        ["#ffab91", "#ffab91"],  # 6 Yellow
+        ["#78a9ff", "#78a9ff"],  # 7 Blue
+        ["#ff7eb6", "#ff7eb6"],  # 8 Magenta
+        ["#82cfff", "#82cfff"],  # 9 Cyan
+        ["#ff6f00", "#ff6f00"],  # 10 Orange
+        ["#be95ff", "#be95ff"]  # 11 Violet
         ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -340,13 +338,13 @@ screens = [
                         length=20
                         ),
                     widget.GroupBox(
-                        active=colors[4],
+                        active=colors[6],
                         block_highlight_text_color=colors[7],
                         borderwidth=0,
                         disable_drag=True,
                         font='Font Awesome 6 Pro Solid, Font Awesome 6 Brands',
                         fontsize=16,
-                        inactive=colors[5],
+                        inactive=colors[1],
                         rounded=True,
                         spacing=10,
                         ),
@@ -373,66 +371,63 @@ screens = [
                             fontsize=12,
                             update_interval=1800,
                             ),
-                    widget.Image(
-                        filename='~/.config/qtile/assets/bar/sun.png',
-                        margin=8
-                        ),
-                    widget.Backlight(
-                        foreground=colors[6],
-                        brightness_file='/sys/class/backlight/amdgpu_bl0/actual_brightness',
-                        max_brightness_file='/sys/class/backlight/amdgpu_bl0/max_brightness',
-                        fontsize=12,
-                        padding=0
-                        ),
-                    widget.Spacer(
-                        length=16
-                        ),
-                    widget.Image(
-                            filename='~/.config/qtile/assets/bar/vol.png',
-                            margin=8
-                            ),
-                    widget.PulseVolume(
-                            foregroun=colors[8],
-                            fontsize=12,
-                            padding=0
-                            ),
-                    widget.Spacer(
-                            length=16,
-                            ),
-                    widget.Image(
-                            filename='~/.config/qtile/assets/bar/bat.png',
-                            margin=5,
-                            ),
-                    widget.Battery(
-                            format='{char} {percent:2.0%}',
-                            charge_char='󱐋',
-                            discharge_char='󱈸',
-                            notify_below=15,
-                            notification_timeout=0,
-                            low_background=colors[4],
-                            low_percentage=0.15,
-                            foreground = colors[2],
-                            fontsize=12,
-                            padding=0,
-                            ),
-                    widget.Spacer(
-                            length=20
-                            ),
+                    # widget.Image(
+                    #     filename='~/.config/qtile/assets/bar/sun.png',
+                    #     margin=8
+                    #     ),
+                    # widget.Backlight(
+                    #     foreground=colors[6],
+                    #     brightness_file='/sys/class/backlight/amdgpu_bl1/actual_brightness',
+                    #     max_brightness_file='/sys/class/backlight/amdgpu_bl1/max_brightness',
+                    #     fontsize=12,
+                    #     padding=0
+                    #     ),
+                    # widget.Spacer(
+                    #     length=16
+                    #     ),
+                    # widget.Image(
+                    #         filename='~/.config/qtile/assets/bar/vol.png',
+                    #         margin=8
+                    #         ),
+                    # widget.PulseVolume(
+                    #         foregroun=colors[8],
+                    #         fontsize=12,
+                    #         padding=0
+                    #         ),
+                    # widget.Spacer(
+                    #         length=16,
+                    #         ),
+                    # widget.Image(
+                    #         filename='~/.config/qtile/assets/bar/bat.png',
+                    #         margin=5,
+                    #         ),
+                    # widget.Battery(
+                    #         format='{char} {percent:2.0%}',
+                    #         charge_char='󱐋',
+                    #         discharge_char='󱈸',
+                    #         notify_below=15,
+                    #         notification_timeout=0,
+                    #         low_background=colors[4],
+                    #         low_percentage=0.15,
+                    #         foreground = colors[2],
+                    #         fontsize=12,
+                    #         padding=0,
+                    #         ),
+                    # widget.Spacer(
+                    #         length=20
+                    #         ),
                     widget.Spacer(
                             length=10,
-                            background=colors[1]
                             ),
                     widget.Systray(
                             icon_size=16,
-                            padding=5,
-                            background=colors[1]
+                            padding=10,
                             ),
                     widget.Spacer(
                             length=10,
-                            background=colors[1]
                             ),
                     widget.Spacer(
-                            length=20
+                            length=10
                             ),
                     widget.Clock(
                             format='%H:%M',
@@ -488,7 +483,7 @@ cursor_warp = False
 floating_layout = layout.Floating(
         border_focus='ebbcba',
         border_normal='191724',
-        border_width=4,
+        border_width=2,
         fullscreen_border_width=0,
         float_rules=[
             # Run the utility `xprop` to see the wm class and name of an X client

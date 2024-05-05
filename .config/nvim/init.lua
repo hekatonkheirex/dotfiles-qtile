@@ -1,3 +1,10 @@
+-- ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+-- ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+-- ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+-- ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+-- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+-- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+
 require('plugins')
 require('keybindings')
 require('options')
@@ -10,10 +17,13 @@ require('whichkey-config')
 require('telescope-config')
 require('cmp-config')
 require('colorizer-config')
-require('dashboard-config')
 require('blankline-config')
 require('comment-config')
+require('mason-config')
+require('mason-lspconfig')
+require('dashboard-config')
 require('rosepine-config')
 require('onedark-config')
-require('catppuccin-config')
+-- require('catppuccin-config')
+-- require('tokyonight-config')
 -- require('decay-config')

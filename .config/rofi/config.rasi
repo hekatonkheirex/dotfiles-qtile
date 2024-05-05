@@ -1,7 +1,7 @@
 configuration {
     modi: "drun,power:rofi-power-menu --no-symbols,emoji:rofimoji --action copy --max-recent 0";
     show-icons: true;
-    terminal: "alacritty";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
@@ -11,8 +11,8 @@ configuration {
     display-power: "Power menu";
     display-emoji: "💀 Emoji";
     sidebar-mode: true;
-    font: "JetBrains Mono 14";
+    font: "Inter Bold 16";
 }
 
-@theme "./catppuccin/macchiato.rasi"
-
+// @theme "./catppuccin/macchiato.rasi"
+@theme "oxocarbon.rasi"

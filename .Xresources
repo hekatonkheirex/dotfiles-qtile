@@ -6,5 +6,5 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-Xcursor.theme: S1mple-Catppuccin-Mocha
+Xcursor.theme: McMojave-cursors
 Xcursor.size: 24
