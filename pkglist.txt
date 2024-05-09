@@ -45,6 +45,7 @@ gnu-free-fonts
 graphite-gtk-theme-black-git
 grub
 gst-plugin-pipewire
+gucharmap
 gvfs
 gvfs-mtp
 gvfs-smb
@@ -54,6 +55,7 @@ inter-font
 jq
 kitty
 kvantum
+kvantum-qt5
 kvantum-theme-catppuccin-git
 laptop-mode-tools
 libgnome-keyring
@@ -66,7 +68,7 @@ lightdm-webkit-theme-litarvan
 linux
 linux-firmware
 linux-headers
-lxappearance-gtk3
+lxappearance
 lxsession
 mlocate
 most
@@ -110,10 +112,12 @@ python-pyqt6
 python-pytest
 python-pyxdg
 qbittorrent
+qt5ct
 qt6ct
 qtile
 raw-thumbnailer
 reflector
+ripgrep
 rofi
 rofi-emoji
 rofi-power-menu

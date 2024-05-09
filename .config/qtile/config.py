@@ -325,7 +325,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
         Screen(
-            top=bar.Bar(
+            bottom=bar.Bar(
                 [
                     widget.Spacer(
                         length=10
@@ -452,7 +452,7 @@ screens = [
                             ),
                     ],
                     34,
-                    margin=[5, 5, 0, 5],
+                    margin=[0, 5, 5, 5],
                     background=colors[0],
                     ),
                     )
