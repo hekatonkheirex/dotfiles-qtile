@@ -1,7 +1,7 @@
 import os
 import socket
 import subprocess
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, KeyChord,hook
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, KeyChord, ScratchPad, DropDown, hook
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook, qtile
 from typing import List  # noqa: F401
@@ -214,16 +214,16 @@ keys = [
         ]
 
 groups = []
-group_names = 'www term file share mus'.split()
-group_labels = ["", "", "", "", ""]
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
+group_names = 'www term file chat share mus'.split()
+group_labels = ["", "", "", "", "", ""]
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
     groups.append(
             Group(
                 name=group_names[i],
                 layout=group_layouts[i].lower(),
-                label=group_labels[i]
+                label=group_labels[i],
                 ))
 
 
@@ -233,20 +233,22 @@ def assign_app_group(client):
     d[group_names[0]] = [
             "firefox",
             "Firefox",
-            "Navigator",
+            "Navigator"
             ]
     d[group_names[1]] = [
             "org.wezfurlong.wezterm",
-            "kitty",
+            "kitty"
             ]
     d[group_names[2]] = [
             "thunar"
             ]
     d[group_names[3]] = [
-            "qBittorrent",
             "discord"
             ]
     d[group_names[4]] = [
+            "qBittorrent"
+            ]
+    d[group_names[5]] = [
             "Spotify"
             ]
 
@@ -262,6 +264,7 @@ for i, name in enumerate(group_names, 1):
     keys.extend([
         Key([mod], str(i), lazy.group[name].toscreen()),
         Key([mod, 'shift'], str(i), lazy.window.togroup(name))])
+
 
 # layouts
 # Catppuccin
@@ -296,18 +299,18 @@ layouts = [
 
 # Colors definitions
 colors = [
-        ["#161616", "#161616"],  # 0 Background 0
-        ["#393939", "#393939"],  # 1 Background 1
-        ["#ffffff", "#ffffff"],  # 2 Foreground 0
-        ["#dde1e6", "#dde1e6"],  # 3 Foreground 1
-        ["#ee5396", "#ee5396"],  # 4 Red
-        ["#42be65", "#42be65"],  # 5 Green
-        ["#ffab91", "#ffab91"],  # 6 Yellow
-        ["#78a9ff", "#78a9ff"],  # 7 Blue
-        ["#ff7eb6", "#ff7eb6"],  # 8 Magenta
-        ["#82cfff", "#82cfff"],  # 9 Cyan
-        ["#ff6f00", "#ff6f00"],  # 10 Orange
-        ["#be95ff", "#be95ff"]  # 11 Violet
+        ["#1e1e2e", "#1e1e2e"],  # 0 Background 0
+        ["#313244", "#313244"],  # 1 Background 1
+        ["#cdd6f4", "#cdd6f4"],  # 2 Foreground 0
+        ["#bac2de", "#bac2de"],  # 3 Foreground 1
+        ["#f38ba8", "#f38ba8"],  # 4 Red
+        ["#a6e3a1", "#a6e3a1"],  # 5 Green
+        ["#f9e2af", "#f9e2af"],  # 6 Yellow
+        ["#89b4fa", "#89b4fa"],  # 7 Blue
+        ["#f5c2e7", "#f5c2e7"],  # 8 Magenta
+        ["#89dceb", "#89dceb"],  # 9 Cyan
+        ["#fab387", "#fab387"],  # 10 Orange
+        ["#cba6f7", "#cba6f7"]   # 11 Violet
         ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -332,7 +335,10 @@ screens = [
                         ),
                     widget.Image(
                         filename='~/.config/qtile/assets/bar/qtile.png',
-                        margin=7
+                        margin=7,
+                        mouse_callbacks={
+                            'Button1': lambda: qtile.cmd_spawn('rofi -show drun')
+                            }
                         ),
                     widget.Spacer(
                         length=20
@@ -431,7 +437,7 @@ screens = [
                             ),
                     widget.Clock(
                             format='%H:%M',
-                            font='Inter Bold'
+                            font='Inter Bold',
                             ),
                     widget.Spacer(
                             length=10
@@ -481,8 +487,8 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-        border_focus='ebbcba',
-        border_normal='191724',
+        border_focus='f2cdcd',
+        border_normal='1e1e2e',
         border_width=2,
         fullscreen_border_width=0,
         float_rules=[

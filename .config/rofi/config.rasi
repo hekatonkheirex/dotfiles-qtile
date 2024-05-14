@@ -14,5 +14,5 @@ configuration {
     font: "Inter Bold 16";
 }
 
-// @theme "./catppuccin/macchiato.rasi"
-@theme "oxocarbon.rasi"
+@theme "./catppuccin/mocha.rasi"
+// @theme "oxocarbon.rasi"
