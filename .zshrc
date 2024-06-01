@@ -100,6 +100,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 # source /home/mura/git/tty/mocha.sh
+# source /home/mura/.zsh-oxocarbon
 source /home/mura/.zsh
 
 # User configuration
@@ -139,13 +140,12 @@ alias mirrors="sudo reflector --latest 10 --age 6 --country US,Paraguay --sort r
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
+# .config/scripts/blks
+# neofetch
 fastfetch
 
 export TERM=kitty
 export PAGER="most"
-export XMODIFIERS=@im=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
 
 if [ -f ~/.zshInsulter/zsh.command-not-found ]; then
     . ~/.zshInsulter/zsh.command-not-found

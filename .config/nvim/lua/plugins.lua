@@ -13,27 +13,8 @@ return require('packer').startup({
   use 'wbthomason/packer.nvim' -- Packer self-manager
 
 -- Themes
-  use 'shaunsingh/nord.nvim'
-  use 'navarasu/onedark.nvim'
-  use 'sainnhe/everforest'
-  use 'sainnhe/gruvbox-material'
-  use 'LunarVim/horizon.nvim'
   use({ 'catppuccin/nvim', as = 'catppuccin' })
-  use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    tag = 'v1.*',
-  })
-  use 'folke/tokyonight.nvim'
-  use 'audibleblink/hackthebox.vim'
-  use {'decaycs/decay.nvim', as = 'decay'}
-  use 'Shatur/neovim-ayu'
-  use 'Mofiqul/dracula.nvim'
   use {'glyh/oxocarbon.nvim', branch = 'lualine-support'}
-  use { 'Everblush/nvim', as = 'everblush' }
-  use 'akai54/2077.nvim'
-  use "rebelot/kanagawa.nvim"
-  use "Biscuit-Colorscheme/nvim"
 
   -- Autopairs
   use { 'windwp/nvim-autopairs' }
@@ -65,11 +46,11 @@ return require('packer').startup({
 
   -- Syntax highlight
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { "luckasRanarison/tree-sitter-hypr" }
   use { 'Fymyte/tree-sitter-rasi' }
+  use { 'tree-sitter-grammars/tree-sitter-hyprlang' }
 
   -- Explorer
-use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' }, config = function()
+use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' }, config = function()
     require'nvim-tree'.setup{
       renderer = {
         indent_markers = {
@@ -128,7 +109,7 @@ use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' }, c
   
   -- Autotags
   use { 'windwp/nvim-ts-autotag' }
-  use { 'HiPhish/nvim-ts-rainbow2' }
+  use { 'HiPhish/rainbow-delimiters.nvim' }
 
   -- Lazy nvim
   use { 'folke/which-key.nvim', config = function()
@@ -150,8 +131,21 @@ use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' }, c
 		end
 	}
 
-  -- Yuck (for eww)
-  use { 'elkowar/yuck.vim' }
+  -- tmux navigator
+  use{ 'alexghergh/nvim-tmux-navigation', config = function()
+	  require'nvim-tmux-navigation'.setup {
+		  disable_when_zoomed = true, -- defaults to false
+		  keybindings = {
+			  left = "<C-h>",
+			  down = "<C-j>",
+			  up = "<C-k>",
+			  right = "<C-l>",
+			  last_active = "<C-\\>",
+			  next = "<C-Space>",
+		  }
+	  }
+	  end
+  }
 
   -- Rasi (for Rofi)
   use { 'Fymyte/rasi.vim', ft = 'rasi', }

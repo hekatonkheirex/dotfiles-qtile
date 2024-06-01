@@ -2,7 +2,7 @@ import os
 import socket
 import subprocess
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, KeyChord, ScratchPad, DropDown, hook
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile import layout, bar, widget, hook, qtile
 from typing import List  # noqa: F401
 
@@ -153,12 +153,12 @@ keys = [
 
         # Custom keybinds
         Key(
-                ["control", "mod1"], "l", lazy.spawn('betterlockscreen -l dumblur'),
+                ["control", "mod1"], "l", lazy.spawn('betterlockscreen -l dimblur'),
                 desc="Lock the screen"
                 ),
         Key(
-                [mod], "b", lazy.spawn('firefox'),
-                desc="Launch Firefox"
+                [mod], "b", lazy.spawn('vivaldi-stable'),
+                desc="Launch Vivaldi"
                 ),
         Key(
                 [mod], "t", lazy.spawn('Thunar'),
@@ -233,7 +233,8 @@ def assign_app_group(client):
     d[group_names[0]] = [
             "firefox",
             "Firefox",
-            "Navigator"
+            "Navigator",
+            "vivaldi-stable"
             ]
     d[group_names[1]] = [
             "org.wezfurlong.wezterm",
@@ -328,7 +329,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
         Screen(
-            bottom=bar.Bar(
+            top=bar.Bar(
                 [
                     widget.Spacer(
                         length=10
@@ -458,7 +459,7 @@ screens = [
                             ),
                     ],
                     34,
-                    margin=[0, 5, 5, 5],
+                    margin=[5, 5, 0, 5],
                     background=colors[0],
                     ),
                     )

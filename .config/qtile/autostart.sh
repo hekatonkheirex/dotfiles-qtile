@@ -19,8 +19,8 @@ xss-lock -l $HOME/.config/scripts/lock.sh &
 blueman-applet &
 nm-applet &
 lxsession &
-gnome-keyring-daemon --start --components=pkcs11,secrets,ssh &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# gnome-keyring-daemon --start --components=pkcs11,secrets,ssh &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 ln -s $HOME/.config/qtile/assets/layout/layout-monadtall.png   ~/.icons &
 ln -s $HOME/.config/qtile/assets/layout/layout-floating.png    ~/.icons &
