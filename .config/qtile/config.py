@@ -9,7 +9,7 @@ from typing import List  # noqa: F401
 
 # Defaults
 mod = "mod4"
-myTerm = "kitty"
+myTerm = "wezterm"
 
 
 # Autostart programs
@@ -247,6 +247,7 @@ def assign_app_group(client):
             "discord"
             ]
     d[group_names[4]] = [
+            "qbittorrent",
             "qBittorrent"
             ]
     d[group_names[5]] = [
